@@ -200,7 +200,7 @@ export default function HomePage() {
 
         {/* Main Content */}
         <main className="flex-1 flex justify-center items-center flex-col p-8 overflow-y-auto">
-          <h2 className="text-6xl max-w-4xl text-center mb-8 font-serif ">
+          <h2 className=" text-6xl max-w-4xl text-center mb-8 font-serif ">
             Make Your First Temporary Email Address
           </h2>
 
@@ -215,16 +215,25 @@ export default function HomePage() {
             Only lowercase letters and numbers are allowed (max 85 characters)
           </p>
 
-          <div className="relative ">
+          <div className="relative hidden lg:block ">
             <div className="flex justify-center items-center">
               <Image
                 src="./iphone.png"
                 width={1000}
                 height={1000}
                 alt="App preview"
+                className=""
               />
             </div>
             {AbstractBlocks}
+          </div>
+
+          <div className="dark:block hidden  ">
+            <img className="w-[11cm] h-[8.4cm]" src="./Screenshot 2025-09-21 124712.png" alt="" />
+          </div>
+
+          <div className=" block md:hidden ">
+             <img className="w-[12cm] h-[8.4cm] ml-2" src="./Screenshot 2025-09-21 125053.png" alt="" />
           </div>
         </main>
       </div>
