@@ -22,6 +22,7 @@ import { toast } from "sonner";
 import { Screen } from "@/components/screen";
 import { Header, Footer, BorderDecoration } from "@/components/layout";
 import { fetchMessages } from "@/lib/api";
+import MailboxSidebarComponent from "@/components/MailBoxComponent/MilboxSidebarCompoenent";
 
 export default function MailboxPage() {
   const params = useParams();
@@ -333,63 +334,7 @@ export default function MailboxPage() {
         <Header />
         {/* Sidebar */}
         <div className="flex">
-          <aside className="w-64 bg-white dark:bg-[#272727] border-r p-4 hidden md:block  h-screen  ">
-            <div className="bg-[#FF6900] rounded-xl h-[1.3cm] w-[5.5cm] mb-6 flex justify-center items-center shadow-xl border border-orange-600">
-              <h1 className="text-white font-semibold text-lg flex justify-between items-center gap-2">
-                <UserCircle className="w-5 h-5" /> <EmailAddressDisplay />
-              </h1>
-            </div>
-            <ul className="space-y-2 text-sm">
-              <li
-                onClick={() => {
-                  const email = `${username}@temp.abhi.at`;
-                  navigator.clipboard.writeText(email);
-                  toast.success("Email copied to clipboard!");
-                }}
-                className="flex justify-between items-center px-3 py-2 rounded-md bg-[#F4F3EC] dark:bg-[#1A1A1A] dark:hover:bg-[#C0C954] hover:bg-[#C0C954] hover:text-black font-medium"
-              >
-                <span className="flex items-center gap-2">
-                  <Inbox className="w-4 h-4" /> <h1>Copy</h1>
-                </span>
-              </li>
-              <Link
-                href="/"
-                className="px-3 py-2 hover:bg-[#FFA6EB] dark:hover:bg-[#FFA6EB]  hover:text-black rounded-md flex items-center gap-2"
-              >
-                <Star className="w-4 h-4" />{" "}
-                <h1 className="w-full sm:w-auto">
-                  <h1 className="">Change</h1>
-                </h1>
-              </Link>
-              <li
-                onClick={manualRefresh}
-                className="px-3 py-2 hover:bg-[#F4F3EC] dark:hover:bg-[#1A1A1A]    rounded-md flex items-center gap-2"
-              >
-                <Refresh className="w-4 h-4 " /> <h1>Manual Refresh</h1>
-              </li>
-
-              <li className="px-3 py-2 hover:bg-[#F4F3EC] dark:hover:bg-[#1A1A1A] rounded-md flex items-center gap-2">
-                <MoreHorizontal className="w-4 h-4" /> More
-              </li>
-            </ul>
-
-            <div className="bg-[#F4F3EC] dark:bg-[#1A1A1A] rounded-4xl p-5 mt-5">
-              <div className="flex flex-col gap-2">
-                <h1 className="text-[14px] font-semibold flex items-center gap-2">
-                  <ShieldAlert className="w-4 h-4" /> Temp Mail Service
-                </h1>
-                <p className="text-[13px] text-gray-700 dark:text-gray-500">
-                  Your mails are public. Don&apos;t use it for important mails.
-                  Use it to subscribe to all unwanted services. Your mails will
-                  be cleared from the database after 24 hours. Save any data you
-                  need later!
-                </p>
-                <p className="text-xs text-gray-400 flex items-center gap-1">
-                  <Info className="w-3 h-3" /> Made by @Abhinavstwt
-                </p>
-              </div>
-            </div>
-          </aside>
+   <MailboxSidebarComponent/>
 
           <EmailsList />
         </div>

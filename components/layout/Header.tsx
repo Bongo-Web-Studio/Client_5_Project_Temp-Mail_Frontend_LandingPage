@@ -58,12 +58,6 @@ export function Header() {
           </span>
         </button>
 
-        <a href="https://github.com/abhinavkale-dev/Temp-mail" target="_blank" rel="noopener noreferrer">
-          <Button variant="secondary" size="sm">
-            <Star className={starClassName} size={16} strokeWidth={1} aria-hidden="true" />
-            <span>Star on GitHub</span>
-          </Button>
-        </a>
       </div>
     </header>
   )

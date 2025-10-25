@@ -86,7 +86,7 @@ export default function HomePage() {
   );
 
   const AbstractBlocks = (
-    <div className="absolute top-[37px] left-[340px] w-[8.6cm] rounded-t-4xl overflow-hidden shadow-xl">
+    <div className="absolute top-[29px] lg:top-[60px] left-[18px] lg:left-[212px] lg:w-[9.2cm] w-[7.7cm] rounded-t-4xl overflow-hidden shadow-xl">
       {/* Black Header */}
       <div className="bg-black text-white p-5 h-[2cm] flex flex-col justify-between">
         <h1
@@ -123,14 +123,14 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="bg-[#C0C954] col-span-2 p-4 h-[2.5cm] text-black flex flex-col justify-center">
+        <div className="bg-[#C0C954] col-span-2 lg:p-4  p-2 h-[2.5cm] text-black flex lg:flex-col lg:justify-center justify-between lg:items-start items-center">
           <p
             style={{ fontFamily: "InstrumentSerif" }}
-            className="text-6xl font-bold"
+            className="lg:text-6xl text-6xl font-bold"
           >
             83—
           </p>
-          <p className="text-sm flex items-center gap-1">
+          <p className="lg:text-sm text-[10px]  flex items-center gap-1">
             <Send className="w-4 h-4" /> Ads — New Features Coming Soon
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function HomePage() {
   );
 
   return (
-    <div className="max-h-screen bg-[#F4F3EC] dark:bg-[#1A1A1A] flex flex-col overflow-hidden">
+    <div className=" bg-[#F4F3EC] dark:bg-[#1A1A1A] flex flex-col lg:h-screen h-[90vh] w-full  overflow-hidden">
       <Header />
 
       <div className="flex flex-1">
@@ -200,7 +200,7 @@ export default function HomePage() {
 
         {/* Main Content */}
         <main className="flex-1 flex justify-center items-center flex-col p-8 overflow-y-auto">
-          <h2 className=" text-6xl max-w-4xl text-center mb-8 font-serif ">
+          <h2 className=" lg:text-5xl text-4xl   max-w-4xl text-center mb-8 font-serif ">
             Make Your First Temporary Email Address
           </h2>
 
@@ -214,26 +214,19 @@ export default function HomePage() {
           <p className="text-center mt-2 text-xs text-gray-500 dark:text-gray-500">
             Only lowercase letters and numbers are allowed (max 85 characters)
           </p>
-
-          <div className="relative hidden lg:block ">
-            <div className="flex justify-center items-center">
+          {/* ✅ Laptop view — only on large screens (always shown) */}
+          <div className=" relative  lg:pt-5 ">
+            <div className="flex justify-center items-center ">
               <Image
                 src="./iphone.png"
-                width={1000}
-                height={1000}
+                width={10}
+                height={10}
                 alt="App preview"
-                className=""
+                className="lg:w-[50vw] w-[8.9cm] h-[8.9cm]  lg:h-[55vh]   object-cover "
               />
+
+              {AbstractBlocks}
             </div>
-            {AbstractBlocks}
-          </div>
-
-          <div className="dark:block hidden  ">
-            <img className="w-[11cm] h-[8.4cm]" src="./Screenshot 2025-09-21 124712.png" alt="" />
-          </div>
-
-          <div className=" block md:hidden ">
-             <img className="w-[12cm] h-[8.4cm] ml-2" src="./Screenshot 2025-09-21 125053.png" alt="" />
           </div>
         </main>
       </div>
